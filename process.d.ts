@@ -2,6 +2,9 @@ declare namespace NodeJS {
   export interface ProcessEnv {
     NEXTAUTH_URL: string
     NEXTAUTH_SECRET: string
+    DRIBBBLE_CLIENT_ID: string
+    DRIBBBLE_CLIENT_SECRET: string
+    DRIBBBLE_SCOPE: "public" | "public upload"
     GITHUB_ID: string
     GITHUB_SECRET: string
     FACEBOOK_ID: string
