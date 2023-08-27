@@ -5,6 +5,8 @@ import GithubProvider from "next-auth/providers/github"
 import TwitterProvider from "next-auth/providers/twitter"
 import Auth0Provider from "next-auth/providers/auth0"
 
+import AzureDevOpsProvider from "../../../providers/azure-devops"
+
 // For more information on each option (and a full list of options) go to
 // https://next-auth.js.org/configuration/options
 export const authOptions: NextAuthOptions = {
@@ -31,6 +33,11 @@ export const authOptions: NextAuthOptions = {
       clientId: process.env.TWITTER_ID,
       clientSecret: process.env.TWITTER_SECRET,
       version: "2.0",
+    }),
+    AzureDevOpsProvider({
+      clientId: process.env.AZURE_DEVOPS_APP_ID,
+      clientSecret: process.env.AZURE_DEVOPS_CLIENT_SECRET,
+      scope: process.env.AZURE_DEVOPS_SCOPE,
     }),
   ],
   callbacks: {
